@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=sans-serif&size=30&vCenter=true&lines=Meow!+I+am+HeiTang+%E0%B8%85%E2%80%A2%CF%89%E2%80%A2%E0%B8%85;%E5%96%B5%EF%BC%81%E6%88%91%E6%98%AF%E9%BB%91%E7%B3%96+%E0%B8%85%E2%80%A2%CF%89%E2%80%A2%E0%B8%85">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Changa&size=40&center=true&vCenter=true&lines=Hi%2C+Meow+!+%E0%B8%85%E2%80%A2%CF%89%E2%80%A2%E0%B8%85;I'm+a+cat+(%5E%E3%83%BB%CF%89%E3%83%BB%5E+);A+orange+tabby+(%E0%B8%85'%CF%89'%E0%B8%85);Not+fat+!++(%3D%EF%BD%80%CF%89%C2%B4%3D)">
   </a>
 </h1>
 
@@ -14,10 +14,10 @@
 </h5> -->
 <br>
 
-### ⚡ > Hello, Meow! ⚡
+### > Hello, Meow! ฅ•ω•ฅ
 <img align="right" width="150" height="150" alt="Dani Akash" src="https://raw.githubusercontent.com/HeiTang/HeiTang/main/images/orange-1.png"/>
 
-HI, I'm HeiTang, a student at FCU.
+Hi, I'm HeiTang, a student at FCU.
 
 - 👨‍💻 C / C# / C++ / Python / HTML / Apps Script
 - ⚒️ GitHub Actions / Django / Qt / Unity
@@ -42,7 +42,7 @@ HI, I'm HeiTang, a student at FCU.
   <img src="https://activity-graph.herokuapp.com/graph?username=HeiTang&theme=react-dark&bg_color=20232a&hide_border=true" width="100%"/>
 </p>
 
-### 👨‍💻 Repositories 👨‍💻
+### 🔥 Repositories 🔥
 <br>
 <div width="100%" align="center">
   <a align="left" href="https://github.com/HeiTang/ShortYou" title="ShortYou"><img align="left" height="115" src="https://github-readme-stats.vercel.app/api/pin/?username=HeiTang&repo=ShortYou&theme=react&border_color=61dafb&border_radius=10"></a>
