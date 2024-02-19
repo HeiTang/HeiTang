@@ -17,14 +17,18 @@
 ### > Hello, Meow! ฅ•ω•ฅ
 <img align="right" width="150" height="150" alt="Dani Akash" src="https://raw.githubusercontent.com/HeiTang/HeiTang/main/images/orange-1.png"/>
 
-Hi, I'm HeiTang, a student at FCU.
+Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 
 - 👨‍💻 C / C# / C++ / Python / HTML / Apps Script
 - ⚒️ GitHub Actions / Django / Qt / Unity
 - ✏️ Good at developing with Python
 - 🌱 I’m currently learning everything
 
-<img align="center" src="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-snake.svg">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake.svg" />
+</picture>
 
 ### ⚡ Stats ⚡
 
