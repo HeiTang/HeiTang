@@ -1,0 +1,73 @@
+#  anuraghazra/github-readme-stats
+
+name: Update Readme Cards
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-cards:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout & Setup
+      - uses: actions/checkout@v3
+      
+      - name: Checkout Tool Source
+        uses: actions/checkout@v3
+        with:
+          repository: anuraghazra/github-readme-stats
+          path: stats-tool
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      # 2. 啟動本地伺服器
+        env:
+          PAT_1: ${{ secrets.PAT_1 }}
+        run: |
+          cd stats-tool
+          npm install
+          nohup node express.js > /dev/null 2>&1 &
+          echo "Waiting for server to launch..."
+          sleep 10
+      # 3. 準備 Assets 目錄
+      - name: Prepare Assets Directory
+        run: mkdir -p assets
+
+      # 4. 產生 Stats Card (個人資料統計)
+      - name: Generate Stats Card
+        run: |
+          curl "http://localhost:9000/api?username=HeiTang&show_icons=true&count_private=true&theme=react" > assets/stats-card.svg
+
+      # 5. 產生 Top Languages (常用語言)
+      - name: Generate Top Langs Card
+        run: |
+          curl "http://localhost:9000/api/top-langs?username=HeiTang&layout=compact&theme=react" > assets/top-langs.svg
+
+      # 6. 產生 Pin Card (專案釘選)
+      - name: Generate Pin Cards
+        run: |
+          # === 設定區 ===
+          # 請在這裡列出你想釘選的專案名稱 (用空白分隔)
+          # 例如: "FCU-CourseData greendango-store project-c"
+          REPOS="ShortYou MailCat AniCat-v2 Zrss"
+
+          for repo in $REPOS; do
+            echo "Generating pin for $repo..."
+            curl "http://localhost:9000/api/pin?username=HeiTang&repo=$repo&theme=react" > assets/pin-$repo.svg
+          done
+
+      # 7. 上傳變更
+      - name: Commit & Push Changes
+        run: |
+          if [[ -n $(git status -s) ]]; then
+            git config --local user.name "github-actions[bot]"
+            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/
+            git commit -m "docs: update dynamic stats cards [skip ci]"
+            git push
+          else
+            echo "No changes detected."
+          fi
