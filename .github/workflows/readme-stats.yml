@@ -23,7 +23,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      
       # 2. 啟動本地伺服器
+      - name: Start Local Server
         env:
           PAT_1: ${{ secrets.PAT_1 }}
         run: |
@@ -32,6 +34,7 @@ jobs:
           nohup node express.js > /dev/null 2>&1 &
           echo "Waiting for server to launch..."
           sleep 10
+
       # 3. 準備 Assets 目錄
       - name: Prepare Assets Directory
         run: mkdir -p assets
