@@ -42,12 +42,12 @@ jobs:
       # 4. 產生 Stats Card (個人資料統計)
       - name: Generate Stats Card
         run: |
-          curl "http://localhost:9000/api?username=HeiTang&show_icons=true&count_private=true&theme=react" > assets/stats-card.svg
+          curl "http://localhost:9000/api?username=HeiTang&show_icons=true&count_private=true&theme=react&hide_border=true" > assets/stats-card.svg
 
       # 5. 產生 Top Languages (常用語言)
       - name: Generate Top Langs Card
         run: |
-          curl "http://localhost:9000/api/top-langs?username=HeiTang&layout=compact&theme=react" > assets/top-langs.svg
+          curl "http://localhost:9000/api/top-langs?username=HeiTang&layout=compact&theme=react&hide_border=true" > assets/top-langs.svg
 
       # 6. 產生 Pin Card (專案釘選)
       - name: Generate Pin Cards
@@ -59,7 +59,7 @@ jobs:
 
           for repo in $REPOS; do
             echo "Generating pin for $repo..."
-            curl "http://localhost:9000/api/pin?username=HeiTang&repo=$repo&theme=react" > assets/pin-$repo.svg
+            curl "http://localhost:9000/api/pin?username=HeiTang&repo=$repo&theme=react&hide_border=true" > assets/pin-$repo.svg
           done
 
       # 7. 上傳變更
