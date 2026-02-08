@@ -33,8 +33,8 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 ### ⚡ Stats ⚡
 
 <p align="center">
-  <img src="assets/stats-card.svg" width="495" height="195" />
-  <img src="assets/streak-stats.svg" width="495" height="195" />
+  <img src="assets/stats-card.svg" width="390" height="153" />
+  <img src="assets/streak-stats.svg" width="390" height="153" />
 </p>
 <br>
 <p align="center">
