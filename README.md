@@ -45,10 +45,10 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 <br>
 <p align="center">
   <a href="https://github.com/HeiTang/ShortYou" title="ShortYou">
-    <img width="49%" src="assets/pin-shortyou.svg">
+    <img width="49%" src="assets/pin-ShortYou.svg">
   </a>
   <a href="https://github.com/HeiTang/Zrss" title="Zrss">
-    <img width="49%" src="assets/pin-zrss.svg">
+    <img width="49%" src="assets/pin-Zrss.svg">
   </a>
 </p>
 <p align="center">
