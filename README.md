@@ -32,16 +32,10 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 
 ### ⚡ Stats ⚡
 
-<table align="center" style="border: none;">
-  <tr style="border: none;">
-    <td align="center" style="border: none;">
-      <img src="assets/stats-card.svg" width="495" height="195" style="display: block; max-width: 100%;" />
-    </td>
-    <td align="center" style="border: none;">
-      <img src="assets/streak-stats.svg" width="495" height="195" style="display: block; max-width: 100%;" />
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="assets/stats-card.svg" width="495" height="195" />
+  <img src="assets/streak-stats.svg" width="495" height="195" />
+</p>
 <br>
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=HeiTang&theme=react-dark&bg_color=20232a&hide_border=true" width="100%"/>
@@ -49,44 +43,30 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 
 ### 🔥 Repositories 🔥
 <br>
-<table align="center" width="100%" style="border: none;">
-  <tr style="border: none;">
-    <td align="center" width="50%" style="border: none;">
-      <a href="https://github.com/HeiTang/ShortYou" title="ShortYou">
-        <img height="115" src="assets/pin-shortyou.svg">
-      </a>
-    </td>
-    <td align="center" width="50%" style="border: none;">
-      <a href="https://github.com/HeiTang/Zrss" title="Zrss">
-        <img height="115" src="assets/pin-zrss.svg">
-      </a>
-    </td>
-  </tr>
-  <tr style="border: none;">
-    <td align="center" width="50%" style="border: none;">
-      <a href="https://github.com/HeiTang/MailCat" title="MailCat">
-        <img height="115" src="assets/pin-MailCat.svg">
-      </a>
-    </td>
-    <td align="center" width="50%" style="border: none;">
-      <a href="https://github.com/HeiTang/AniCat-v2" title="AniCat-v2">
-        <img height="115" src="assets/pin-AniCat-v2.svg">
-      </a>
-    </td>
-  </tr>
-  <tr style="border: none;">
-    <td align="center" width="50%" style="border: none;">
-      <a href="https://github.com/HeiTang/StraightA_Orders_Notify" title="StraightA_Orders_Notify">
-        <img height="115" src="assets/pin-StraightA_Orders_Notify.svg">
-      </a>
-    </td>
-    <td align="center" width="50%" style="border: none;">
-      <a href="https://github.com/HeiTang/HackerSir-MeetCreate" title="HackerSir-MeetCreate">
-        <img height="115" src="assets/pin-HackerSir-MeetCreate.svg">
-      </a>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <a href="https://github.com/HeiTang/ShortYou" title="ShortYou">
+    <img width="49%" src="assets/pin-shortyou.svg">
+  </a>
+  <a href="https://github.com/HeiTang/Zrss" title="Zrss">
+    <img width="49%" src="assets/pin-zrss.svg">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/HeiTang/MailCat" title="MailCat">
+    <img width="49%" src="assets/pin-MailCat.svg">
+  </a>
+  <a href="https://github.com/HeiTang/AniCat-v2" title="AniCat-v2">
+    <img width="49%" src="assets/pin-AniCat-v2.svg">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/HeiTang/StraightA_Orders_Notify" title="StraightA_Orders_Notify">
+    <img width="49%" src="assets/pin-StraightA_Orders_Notify.svg">
+  </a>
+  <a href="https://github.com/HeiTang/HackerSir-MeetCreate" title="HackerSir-MeetCreate">
+    <img width="49%" src="assets/pin-HackerSir-MeetCreate.svg">
+  </a>
+</p>
 <br>
 <h4 align="center">
   <a href="https://github.com/HeiTang?tab=repositories" title="Show Repositories">🔎 Show More 🔍</a>
