@@ -59,14 +59,6 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
     <img width="49%" src="assets/pin-AniCat-v2.svg">
   </a>
 </p>
-<p align="center">
-  <a href="https://github.com/HeiTang/StraightA_Orders_Notify" title="StraightA_Orders_Notify">
-    <img width="49%" src="assets/pin-StraightA_Orders_Notify.svg">
-  </a>
-  <a href="https://github.com/HeiTang/HackerSir-MeetCreate" title="HackerSir-MeetCreate">
-    <img width="49%" src="assets/pin-HackerSir-MeetCreate.svg">
-  </a>
-</p>
 <br>
 <h4 align="center">
   <a href="https://github.com/HeiTang?tab=repositories" title="Show Repositories">🔎 Show More 🔍</a>
