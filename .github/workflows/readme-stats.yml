@@ -11,6 +11,10 @@ jobs:
   update-cards:
     runs-on: ubuntu-latest
     steps:
+      - name: Record Start Time
+        id: start-time
+        run: echo "timestamp=$(date +%s)" >> $GITHUB_OUTPUT
+
       # 1. Checkout & Setup
       - uses: actions/checkout@v3
       
@@ -74,3 +78,23 @@ jobs:
           else
             echo "No changes detected."
           fi
+
+      - name: Workflow Summary
+        if: success()
+        run: |
+          # Calculate execution time
+          START_TIME=${{ steps.start-time.outputs.timestamp }}
+          END_TIME=$(date +%s)
+          DURATION=$((END_TIME - START_TIME))
+          MINUTES=$((DURATION / 60))
+          SECONDS=$((DURATION % 60))
+
+          echo "## ✅ Workflow Completed Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **User:** HeiTang" >> $GITHUB_STEP_SUMMARY
+          echo "- **Theme:** react" >> $GITHUB_STEP_SUMMARY
+          echo "- **Stats Card Size:** $(wc -c < assets/stats-card.svg) bytes" >> $GITHUB_STEP_SUMMARY
+          echo "- **Top Langs Size:** $(wc -c < assets/top-langs.svg) bytes" >> $GITHUB_STEP_SUMMARY
+          echo "- **Pin Cards Generated:** $(ls assets/pin-*.svg 2>/dev/null | wc -l)" >> $GITHUB_STEP_SUMMARY
+          echo "- **Execution Time:** ${MINUTES}m ${SECONDS}s" >> $GITHUB_STEP_SUMMARY
+          echo "- **Updated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
