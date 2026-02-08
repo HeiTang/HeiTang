@@ -32,7 +32,7 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 
 ### ⚡ Stats ⚡
 
-<table align="center">
+<table align="center" border="0">
   <tr>
     <td align="center">
       <img src="assets/stats-card.svg" width="495" height="195" style="display: block; max-width: 100%;" />
@@ -49,7 +49,7 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 
 ### 🔥 Repositories 🔥
 <br>
-<table align="center" width="100%">
+<table align="center" width="100%" border="0">
   <tr>
     <td align="center" width="50%">
       <a href="https://github.com/HeiTang/ShortYou" title="ShortYou">
