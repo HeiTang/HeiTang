@@ -32,37 +32,42 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 
 ### ⚡ Stats ⚡
 
-<p align=center>
-  <div align=center>
-    <a href="https://git.io/streak-stats">
-      <img align="left" src="https://streak-stats.demolab.com/?user=HeiTang&theme=react&hide_border=true" alt="HeiTang" />
-    </a>
-    <a href="https://github.com/anuraghazra/github-readme-stats" title="Go to Source">
-      <img align="right" width=396 src="https://github-readme-stats.vercel.app/api?username=HeiTang&count_private=true&show_icons=true&theme=react&border_color=61dafb&hide_border=true" />
-    </a>
-  </div>
-  <br><br><br><br><br><br><br><br><br>
-  <br>
+<p align="center">
+  <img src="assets/stats-card.svg" width="400" height="158" />
+  <img src="assets/streak-stats.svg" width="400" height="158" />
+</p>
+<br>
+<p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=HeiTang&theme=react-dark&bg_color=20232a&hide_border=true" width="100%"/>
 </p>
 
 ### 🔥 Repositories 🔥
 <br>
-<div width="100%" align="center">
-  <a align="left" href="https://github.com/HeiTang/ShortYou" title="ShortYou"><img align="left" height="115" src="https://github-readme-stats.vercel.app/api/pin/?username=HeiTang&repo=ShortYou&theme=react&border_color=61dafb&border_radius=10"></a>
-  <a align="right" href="https://github.com/HeiTang/Zrss" title="Zrss"><img align="right" height="115" src="https://github-readme-stats.vercel.app/api/pin/?username=HeiTang&repo=Zrss&theme=react&border_color=61dafb&border_radius=10"></a>
-</div>
-<br/><br/><br/><br/><br/><br/>
-<div width="100%" align="center">
-  <a align="left" href="https://github.com/HeiTang/MailCat" title="MailCat"><img align="left" height="115" src="https://github-readme-stats.vercel.app/api/pin/?username=HeiTang&repo=MailCat&theme=react&border_color=61dafb&border_radius=10"></a>
-  <a align="right" href="https://github.com/HeiTang/AniCat-v2" title="AniCat-v2"><img align="right" height="115" src="https://github-readme-stats.vercel.app/api/pin/?username=HeiTang&repo=AniCat-v2&theme=react&border_color=61dafb&border_radius=10"></a>
-</div>
-<br/><br/><br/><br/><br/><br/>
-<div width="100%" align="center">
-  <a align="left" href="https://github.com/HeiTang/StraightA_Orders_Notify" title="StraightA_Orders_Notify"><img align="left" height="115" src="https://github-readme-stats.vercel.app/api/pin/?username=HeiTang&repo=StraightA_Orders_Notify&theme=react&border_color=61dafb&border_radius=10"></a>
-  <a align="right" href="https://github.com/HeiTang/HackerSir-MeetCreate" title="HackerSir-MeetCreate"><img align="right" height="115" src="https://github-readme-stats.vercel.app/api/pin/?username=HeiTang&repo=HackerSir-MeetCreate&theme=react&border_color=61dafb&border_radius=10"></a>
-</div>
-<br><br><br><br><br><br>
+<p align="center">
+  <a href="https://github.com/HeiTang/ShortYou" title="ShortYou">
+    <img width="49%" src="assets/pin-ShortYou.svg">
+  </a>
+  <a href="https://github.com/HeiTang/Zrss" title="Zrss">
+    <img width="49%" src="assets/pin-Zrss.svg">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/HeiTang/MailCat" title="MailCat">
+    <img width="49%" src="assets/pin-MailCat.svg">
+  </a>
+  <a href="https://github.com/HeiTang/AniCat-v2" title="AniCat-v2">
+    <img width="49%" src="assets/pin-AniCat-v2.svg">
+  </a>
+</p>
+<p align="center">
+  <a href="https://github.com/HeiTang/StraightA_Orders_Notify" title="StraightA_Orders_Notify">
+    <img width="49%" src="assets/pin-StraightA_Orders_Notify.svg">
+  </a>
+  <a href="https://github.com/HeiTang/HackerSir-MeetCreate" title="HackerSir-MeetCreate">
+    <img width="49%" src="assets/pin-HackerSir-MeetCreate.svg">
+  </a>
+</p>
+<br>
 <h4 align="center">
   <a href="https://github.com/HeiTang?tab=repositories" title="Show Repositories">🔎 Show More 🔍</a>
 </h4>
