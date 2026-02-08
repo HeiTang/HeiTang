@@ -32,17 +32,12 @@ Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
 
 ### ⚡ Stats ⚡
 
-<p align=center>
-  <div align=center>
-    <a href="https://git.io/streak-stats">
-      <img align="left" src="https://streak-stats.demolab.com/?user=HeiTang&theme=react&hide_border=true" alt="HeiTang" />
-    </a>
-    <a href="https://github.com/anuraghazra/github-readme-stats" title="Go to Source">
-      <img align="right" width=396 src="https://github-readme-stats.vercel.app/api?username=HeiTang&count_private=true&show_icons=true&theme=react&border_color=61dafb&hide_border=true" />
-    </a>
-  </div>
-  <br><br><br><br><br><br><br><br><br>
-  <br>
+<p align="center">
+  <img src="assets/stats-card.svg" width="495" height="195" />
+  <img src="assets/streak-stats.svg" width="495" height="195" />
+</p>
+<br>
+<p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=HeiTang&theme=react-dark&bg_color=20232a&hide_border=true" width="100%"/>
 </p>
 
