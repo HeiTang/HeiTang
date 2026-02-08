@@ -14,21 +14,32 @@
 </h5> -->
 <br>
 
-### > Hello, Meow! ฅ•ω•ฅ
-<img align="right" width="150" height="150" alt="Dani Akash" src="https://raw.githubusercontent.com/HeiTang/HeiTang/main/images/orange-1.png"/>
+### Hi there, I'm HeiTang! ฅ•ω•ฅ
 
-Hi, I'm HeiTang, a Full-Stack Developer from Taiwan.
+<img align="right" width="200" height="200" alt="Dani Akash" src="https://raw.githubusercontent.com/HeiTang/HeiTang/main/images/orange-1.png"/>
 
-- 👨‍💻 C / C# / C++ / Python / HTML / Apps Script
-- ⚒️ GitHub Actions / Django / Qt / Unity
-- ✏️ Good at developing with Python
-- 🌱 I’m currently learning everything
+> A Full-Stack Developer from Taiwan who loves building tools to automate life.  
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake.svg" />
-  <img alt="github-snake" src="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake.svg" />
-</picture>
+* 📍 Based in **Taiwan**
+  
+* 🐍 **Pythonista** at heart, specializing in automation and scraping.
+* 🛠️ **Builder** of practical tools like [MailCat](https://github.com/HeiTang/MailCat) and [AniCat](https://github.com/HeiTang/AniCat-v2).
+* 🌱 **Currently exploring:** AI Agents, RAG System, and Dockerizing everything.
+
+<br>
+
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=html,css,js,ts,py,c,php,ruby,flask,laravel,vue,react,tailwind,bootstrap,astro" />
+  <img src="https://skillicons.dev/icons?i=docker,aws,gcp,cloudflare,mysql,postgres,githubactions,grafana,prometheus,jenkins,linux,postman,vscode,git,bash" />
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake.svg" />
+    <img alt="github-snake" src="https://raw.githubusercontent.com/HeiTang/HeiTang/snake/github-contribution-grid-snake.svg" />
+  </picture>
+</p>
 
 ### ⚡ Stats ⚡
 
