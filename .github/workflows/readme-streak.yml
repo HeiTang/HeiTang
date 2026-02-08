@@ -1,0 +1,136 @@
+# DenverCoder1/github-readme-streak-stats
+
+name: Update Streak Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-streak:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Record Start Time
+        id: start-time
+        run: echo "timestamp=$(date +%s)" >> $GITHUB_OUTPUT
+
+      - name: Checkout Streak Tool
+        uses: actions/checkout@v3
+        with:
+          repository: DenverCoder1/github-readme-streak-stats
+          path: streak-tool
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and Run Docker Container
+        env:
+          TOKEN: ${{ secrets.PAT_1 }}
+        run: |
+          cd streak-tool
+
+          # Build Docker image (using buildx cache)
+          docker buildx build \
+            --cache-from type=gha \
+            --cache-to type=gha,mode=max \
+            --load \
+            -t streak-stats .
+
+          # Run container with health check
+          docker run -d \
+            --name streak-stats-server \
+            --health-cmd="curl -f http://localhost/ || exit 1" \
+            --health-interval=5s \
+            --health-timeout=3s \
+            --health-retries=3 \
+            -p 8000:80 \
+            -e TOKEN="$TOKEN" \
+            streak-stats
+
+          # Wait for container to be healthy with timeout
+          echo "Waiting for container to be healthy..."
+          timeout 30 sh -c 'until [ "$(docker inspect -f {{.State.Health.Status}} streak-stats-server)" = "healthy" ]; do sleep 2; done' || {
+            echo "::error::Container failed to become healthy"
+            docker logs streak-stats-server
+            exit 1
+          }
+
+          echo "✅ Container is ready"
+
+      - name: Prepare Assets Directory
+        run: mkdir -p assets
+
+      - name: Generate Streak Stats
+        run: |
+          # Generate SVG with retries
+          for i in 1 2 3; do
+            if curl -f -m 30 "http://localhost:8000/?user=HeiTang&theme=react&hide_border=true" > assets/streak-stats.svg 2>/dev/null; then
+              break
+            fi
+            [ $i -lt 3 ] && echo "⚠️ Attempt $i failed, retrying..." && sleep 3
+            [ $i -eq 3 ] && {
+              echo "::error::Failed to generate streak stats after 3 attempts"
+              docker logs streak-stats-server
+              exit 1
+            }
+          done
+
+          # Validate SVG content for common error indicators
+          if grep -qi "error\|was not found" assets/streak-stats.svg; then
+            echo "::error::Generated SVG contains error message"
+            docker logs streak-stats-server
+            exit 1
+          fi
+
+          # Validate SVG size to ensure it's not empty or an error page
+          SIZE=$(wc -c < assets/streak-stats.svg)
+          if [ $SIZE -lt 1000 ]; then
+            echo "::error::Generated SVG is too small ($SIZE bytes), likely invalid"
+            cat assets/streak-stats.svg
+            exit 1
+          fi
+
+          echo "✅ Streak stats generated successfully ($SIZE bytes)"
+
+      - name: Cleanup Docker Container
+        if: always()
+        run: |
+          docker stop streak-stats-server 2>/dev/null || true
+          docker rm streak-stats-server 2>/dev/null || true
+
+      - name: Commit & Push Changes
+        run: |
+          if [[ -n $(git status --porcelain assets/) ]]; then
+            git config --local user.name "github-actions[bot]"
+            git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/streak-stats.svg
+            git commit -m "docs: update streak stats [skip ci]"
+            git push || {
+              echo "::error::Failed to push changes"
+              exit 1
+            }
+            echo "✅ Changes committed and pushed successfully"
+          else
+            echo "ℹ️ No changes detected, skipping commit"
+          fi
+
+      - name: Workflow Summary
+        if: success()
+        run: |
+          # Calculate execution time
+          START_TIME=${{ steps.start-time.outputs.timestamp }}
+          END_TIME=$(date +%s)
+          DURATION=$((END_TIME - START_TIME))
+          MINUTES=$((DURATION / 60))
+          SECONDS=$((DURATION % 60))
+
+          echo "## ✅ Workflow Completed Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **User:** HeiTang" >> $GITHUB_STEP_SUMMARY
+          echo "- **Theme:** react" >> $GITHUB_STEP_SUMMARY
+          echo "- **SVG Size:** $(wc -c < assets/streak-stats.svg) bytes" >> $GITHUB_STEP_SUMMARY
+          echo "- **Execution Time:** ${MINUTES}m ${SECONDS}s" >> $GITHUB_STEP_SUMMARY
+          echo "- **Updated:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
