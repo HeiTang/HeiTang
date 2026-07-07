@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">HeiTang's GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 82, Total Commits  (last year) : 1984, Total PRs: 89, Total Issues: 11, Contributed to (last year): 8</desc>
+        <desc id="descId">Total Stars Earned: 82, Total Commits  (last year) : 1990, Total PRs: 89, Total Issues: 11, Contributed to (last year): 8</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 90.6100432214445;
+        stroke-dashoffset: 90.6072213065339;
       }
     }
   
