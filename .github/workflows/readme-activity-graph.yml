@@ -14,6 +14,7 @@ on:
 
 env:
   DEFAULT_VERSION: 'main'
+  GRAPH_OPTIONS: 'username=HeiTang&theme=react&bg_color=20232a&title_color=61dafb&hide_border=true&radius=4.5'
 
 permissions:
   contents: write
@@ -67,7 +68,7 @@ jobs:
             --retry-delay 1 --max-time 2 --retry-max-time 30 \
             http://localhost:5100/ -o /dev/null
           curl --fail --silent --show-error --max-time 60 \
-            'http://localhost:5100/graph?username=HeiTang&theme=react-dark&bg_color=20232a&hide_border=true' \
+            "http://localhost:5100/graph?${GRAPH_OPTIONS}" \
             -o "$RUNNER_TEMP/activity-graph.svg"
 
           python3 - <<'PY'
