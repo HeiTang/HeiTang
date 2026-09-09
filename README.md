@@ -49,7 +49,7 @@
 </p>
 <br>
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=HeiTang&theme=react-dark&bg_color=20232a&hide_border=true" width="100%"/>
+  <img src="assets/activity-graph.svg" width="100%" alt="GitHub 活動圖"/>
 </p>
 
 ### 🔥 Repositories 🔥

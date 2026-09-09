@@ -1,0 +1,107 @@
+# Ashutosh00710/github-readme-activity-graph
+
+name: Update Activity Graph
+
+on:
+  schedule:
+    - cron: '17 1 * * *' # Daily at 09:17 Asia/Taipei
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Upstream branch, tag or commit SHA (blank uses DEFAULT_VERSION)'
+        required: false
+        type: string
+
+env:
+  DEFAULT_VERSION: 'main'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme-activity-graph
+  cancel-in-progress: false
+
+jobs:
+  update-activity-graph:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Checkout Activity Graph Source
+        uses: actions/checkout@v4
+        with:
+          repository: Ashutosh00710/github-readme-activity-graph
+          ref: ${{ inputs.ref || env.DEFAULT_VERSION }}
+          path: activity-tool
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: activity-tool/package-lock.json
+
+      - name: Build Activity Graph
+        working-directory: activity-tool
+        run: |
+          # ponytail: upstream lockfile lacks platform packages; use npm ci once upstream fixes it.
+          npm install --no-audit --no-fund
+          npm run build
+
+      - name: Generate and Validate Activity Graph
+        env:
+          TOKEN: ${{ secrets.PAT_1 }}
+        run: |
+          test -n "$TOKEN" || { echo '::error::PAT_1 secret is required'; exit 1; }
+          cd activity-tool
+          PORT=5100 node dist/main.js > "$RUNNER_TEMP/activity-graph.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          cd ..
+
+          curl --fail --silent --show-error --retry 15 --retry-connrefused \
+            --retry-delay 1 --max-time 2 --retry-max-time 30 \
+            http://localhost:5100/ -o /dev/null
+          curl --fail --silent --show-error --max-time 60 \
+            'http://localhost:5100/graph?username=HeiTang&theme=react-dark&bg_color=20232a&hide_border=true' \
+            -o "$RUNNER_TEMP/activity-graph.svg"
+
+          python3 - <<'PY'
+          import os
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          source = Path(os.environ['RUNNER_TEMP']) / 'activity-graph.svg'
+          root = ET.parse(source).getroot()
+          assert root.tag == '{http://www.w3.org/2000/svg}svg', 'Response is not SVG'
+          assert any(
+              node.get('d') and 'ct-line' in node.get('class', '').split()
+              for node in root.iter('{http://www.w3.org/2000/svg}path')
+          ), 'SVG contains no contribution line; refusing to publish an error card'
+          Path('assets').mkdir(exist_ok=True)
+          Path('assets/activity-graph.svg').write_bytes(source.read_bytes())
+          PY
+
+      - name: Commit and Push Activity Graph
+        run: |
+          git add assets/activity-graph.svg
+          if git diff --cached --quiet; then
+            echo 'No activity graph changes.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'docs: update activity graph [skip ci]'
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo '::error::Failed to push activity graph after 3 attempts'
+          exit 1
